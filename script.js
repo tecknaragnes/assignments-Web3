@@ -1,13 +1,46 @@
-assignments = []; //array för uppgifterna
+let assignments = []; //array för uppgifterna
 
-// Den globala navigationen ska vara konsekvent på alla sidor.
-// Du skall använda javascript för att dynamiskt generera navigationen på varje sida utifrån en gemensam datastruktur
-// Koden för detta skall ligga i en separat .js-fil som inkluderas i huvudscriptfilen för landningssidan och varje inlämningsuppgift.
-// Koden skall även inkludera logik för att markera den aktuella sidan i navigationen.
+const wU1 = {
+    id: "wU1",
+    title: "Uppgift 1 - Samlingssida för inlämningsuppgifter",
+    link: "assignment1/index.html",
+    description: "Skapa en landningssida för de framtida uppgifterna i kursen."
+};
+assignments.push(wU1);
+console.log(assignments);
+
+const wU2 = {
+    id: "wU2",
+    title: "Uppgift 2 - Produktsida med kundvagn",
+    link: "assignment2/index.html",
+    description: "Dynamiskt skapa en produktsida som renderar produkter från objekt, och implementera en kundvagnsfunktion."
+};
+assignments.push(wU2);
+console.log(assignments);
+
+const globalNav = document.getElementById("global-nav");
+globalNav.innerHTML = `
+<li><a href="index.html>Start</a></li>
+<li><a href="${wU1.link}">Uppgift 1</a></li>
+<li><a href="${wU2.link}">Uppgift 2</a></li>
+`;
+
+const main = document.getElementById("main");
+// for (let assignment of assignments) {
+main.innerHTML = `
+    <div>
+    <h2><a href="${wU1.link}">${wU1.title}</a></h2>
+    <p>${wU1.description}</p>
+    </div>
+    `;
+main.innerHTML += `
+    <div>
+    <h2><a href="${wU2.link}">${wU2.title}</a></h2>
+    <p>${wU2.description}</p>
+    </div>
+    `;
+// };
+//går det att loopa detta på något sätt? antar genom arrayen, men hur ska jag ta mig igenom arrayen till objekten och egenskaperna däri?
+
+
 // Innehållet på landningssidan skall bestå av “kort” med korta beskrivningar av varje inlämningsuppgift, inklusive titel och länk till respektive uppgift. Dessa kort skall genereras dynamiskt med JavaScript utifrån samma datastruktur som används för navigationen.
-
-// Varje objekt i datastrukturen ska innehålla följande information:
-// id: En unik identifierare för uppgiften (t.ex. “assignment1”).
-// title: Titeln på uppgiften (t.ex. “Uppgift 1 - Samlingssida för inlämningsuppgifter”).
-// link: Länken till uppgiftens sida (t.ex. “assignment1/index.html”).
-// description: En kort beskrivning av uppgiften.
