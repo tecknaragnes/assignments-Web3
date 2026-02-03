@@ -1,0 +1,55 @@
+/*----------generellt----------*/
+html {
+    --accentColor: #102512;
+    --accentColor2: #add8b0;
+    --accentColor3: #381b53;
+    --BGcolor: #e4f8d6;
+    --softCurves: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ----------grid---------- */
+body {
+    /* display: grid; */
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 82px auto 53px;
+    grid-area:
+        "header header"
+        "main aside"
+        "footer footer";
+}
+
+
+/* ----------header---------- */
+header {
+    grid-area: header;
+}
+
+
+/* ----------produkter---------- */
+#cardContainers {
+    grid-area: main;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.productCards:hover {
+    background-color: var(--accentColor);
+}
+
+
+/* ----------kundvagn---------- */
+#shoppingCart {
+    grid-area: aside;
+    background-color: var(--accentColor3);
+}
+
+
+/* ----------footer---------- */
+footer {
+    grid-area: footer;
+    gap: 1.5em;
+}
