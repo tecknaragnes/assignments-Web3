@@ -69,7 +69,7 @@ nav a {
 
 
 /* ----------Main---------- */
-main {
+#main {
     margin: 0.75em;
     display: flex;
     flex-direction: row;
