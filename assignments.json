@@ -1,0 +1,16 @@
+[
+    {
+        "id": "wU1",
+        "nr": "Uppgift 1",
+        "title": "Uppgift 1 - Samlingssida för inlämningsuppgifter",
+        "link": "assignment1/index.html",
+        "description": "Skapa en landningssida för de framtida uppgifterna i kursen."
+    },
+    {
+        "id": "wU2",
+        "nr": "Uppgift 2",
+        "title": "Uppgift 2 - Produktsida med kundvagn",
+        "link": "assignment2/index.html",
+        "description": "Dynamiskt skapa en produktsida som renderar produkter från objekt, och implementera en kundvagnsfunktion."
+    }
+]

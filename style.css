@@ -51,22 +51,21 @@ nav ul {
 }
 
 nav li {
-    /* background-color: var(--accentColor); */
     padding: 0.4em;
 }
 
-/* section {
-    background-color: var(--accentColor3);
-    border-radius: var(--softCurves);
-    padding: 0.4em;
-    margin: 0 0 0.4em 0;
-    color: #fff;
-    font-size: 0.9rem;
+nav .currentPage {
+    background-color: var(--BGcolor);
 }
 
-section a {
-    color: #fff;
-} */
+.currentPage a {
+    color: var(--accentColor);
+}
+
+nav a {
+    color: var(--BGcolor);
+    text-decoration: none;
+}
 
 
 /* ----------Main---------- */

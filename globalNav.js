@@ -1,6 +1,26 @@
-//exportera till script
+const nav = document.createElement("nav");
+const ul = document.createElement("ul");
+const header = document.querySelector("header");
+header.after(nav);
+nav.prepend(ul);
 
-// Den globala navigationen ska vara konsekvent på alla sidor.
-// Du skall använda javascript för att dynamiskt generera navigationen på varje sida utifrån en gemensam datastruktur
-// Koden för detta skall ligga i en separat .js-fil som inkluderas i huvudscriptfilen för landningssidan och varje inlämningsuppgift.
-// Koden skall även inkludera logik för att markera den aktuella sidan i navigationen.
+const fillNav = (assignments) => {
+    ul.innerHTML = "";
+    const homeLi = document.createElement("li");
+    homeLi.innerHTML = `<a href="index.html">Hem</a>`;
+    ul.append(homeLi);
+    for (const assignment of assignments) {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href=${assignment.link}>${assignment.nr}</a>`;
+        ul.append(li);
+    }
+
+}
+
+const resp = await fetch("assignments.json");
+// console.log(resp);
+const assignments = await resp.json();
+// console.log(assignments);
+fillNav(assignments);
+
+// Det ska gå att se vilken sida man är inne på (med hjälp av klasser? .currentPage och classList remove och add)

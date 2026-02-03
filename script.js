@@ -7,7 +7,7 @@ const wU1 = {
     description: "Skapa en landningssida för de framtida uppgifterna i kursen."
 };
 assignments.push(wU1);
-console.log(assignments);
+// console.log(assignments);
 
 const wU2 = {
     id: "wU2",
@@ -16,14 +16,14 @@ const wU2 = {
     description: "Dynamiskt skapa en produktsida som renderar produkter från objekt, och implementera en kundvagnsfunktion."
 };
 assignments.push(wU2);
-console.log(assignments);
+// console.log(assignments);
 
-const globalNav = document.getElementById("global-nav");
-globalNav.innerHTML = `
-<li><a href="index.html>Start</a></li>
-<li><a href="${wU1.link}">Uppgift 1</a></li>
-<li><a href="${wU2.link}">Uppgift 2</a></li>
-`;
+// const globalNav = document.getElementById("global-nav");
+// globalNav.innerHTML = `
+// <li class="currentPage"><a href="index.html">Start</a></li>
+// <li><a href="${wU1.link}">Uppgift 1</a></li>
+// <li><a href="${wU2.link}">Uppgift 2</a></li>
+// `;
 
 const main = document.getElementById("main");
 // for (let assignment of assignments) {
