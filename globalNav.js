@@ -16,7 +16,6 @@ const fillNav = (assignments) => {
     }
 
 }
-
 const resp = await fetch("assignments.json");
 // console.log(resp);
 const assignments = await resp.json();
@@ -24,3 +23,4 @@ const assignments = await resp.json();
 fillNav(assignments);
 
 // Det ska gå att se vilken sida man är inne på (med hjälp av klasser? .currentPage och classList remove och add)
+// använda data-set (attribut) för att visa vilken sida som är aktuell???? labb4a på wt2
