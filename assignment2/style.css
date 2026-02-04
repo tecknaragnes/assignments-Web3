@@ -44,27 +44,46 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* gap: 0.5em; */
 }
 
-main div {
+#cardContainers .productCard {
     margin: 0.4em;
     width: 20em;
     transition: background-color 0.4s;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
-main div:hover {
+#cardContainers .productCard:hover {
     background-color: var(--accentColor);
 }
 
-main div .imgPlaceholder {
-    width: 17em;
+.imgPlaceholder {
+    width: auto;
     height: 17em;
     background-color: var(--BGcolor);
+    box-shadow: var(--accentColor);
 }
 
-main div .imgPlaceholder p {
+#cardContainers .productCard p {
     padding: 0;
+}
+
+.category {
+    margin-top: auto;
+}
+
+.category>span {
+    background-color: var(--accentColor2);
+    color: var(--accentColor);
+    margin: 0.2em;
+    border-radius: var(--softCurves);
+}
+
+.category p {
+    display: inline-block;
+    margin: 0.75em;
 }
 
 #cardContainers .priceClass {

@@ -5,7 +5,7 @@ const products = [
         "desc": "En blyerstpenna med mediumhårdhet.",
         "price": "29",
         "image": "img/",
-        "category": ["pen", "sketch"]
+        "category": ["Pen", "Sketch"]
     },
     {
         "id": "bp001",
@@ -13,7 +13,7 @@ const products = [
         "desc": "En filtspetspenna i färgen skogsgrön.",
         "price": "49",
         "image": "img/",
-        "category": ["pen", "color", "brush"]
+        "category": ["Pen", "Color", "Brush"]
     },
     {
         "id": "br003",
@@ -21,7 +21,7 @@ const products = [
         "desc": "En pensel med mårdhår i storlek 3. Perfekt för akvarell.",
         "price": "59",
         "image": "img/",
-        "category": ["color", "brush", "watercolor"]
+        "category": ["Color", "Brush", "Watercolor"]
     },
     {
         "id": "br008",
@@ -29,7 +29,7 @@ const products = [
         "desc": "En pensel med mårdhår i storlek 3. Perfekt för akvarell.",
         "price": "59",
         "image": "img/",
-        "category": ["color", "brush", "watercolor"]
+        "category": ["Color", "Brush", "Watercolor"]
     },
     {
         "id": "sp051",
@@ -37,7 +37,7 @@ const products = [
         "desc": "Ett skissblock i storlek A5. 160 g/m2. 60 ark.",
         "price": "119",
         "image": "img/",
-        "category": ["sketch", "pad", "paper"]
+        "category": ["Sketch", "Pad", "Paper"]
     },
     {
         "id": "wp051",
@@ -45,7 +45,7 @@ const products = [
         "desc": "Ett akvarellblock i storlek A5. 300 g/m2. 30 ark. Slät gräng.",
         "price": "129",
         "image": "img/",
-        "category": ["watercolor", "pad", "paper"]
+        "category": ["Watercolor", "Pad", "Paper"]
     },
     {
         "id": "wc001",
@@ -53,7 +53,7 @@ const products = [
         "desc": "Akvarellfärg i kopp med färgen magenta.",
         "price": "29",
         "image": "img/",
-        "category": ["watercolor", "color"]
+        "category": ["Watercolor", "Color"]
     },
     {
         "id": "wc015",
@@ -61,7 +61,7 @@ const products = [
         "desc": "Akvarellfärg i kopp med färgen koboltblå.",
         "price": "29",
         "image": "img/",
-        "category": ["watercolor", "color"]
+        "category": ["Watercolor", "Color"]
     }
 ];
 
@@ -69,27 +69,42 @@ const main = document.getElementById("cardContainers");
 const createCards = (products) => {
     for (let product of products) {
         const card = document.createElement("div");
-        const img = document.createElement("div");
-        const name = document.createElement("h2");
-        const desc = document.createElement("p");
-        //kategorier i span?
-        const price = document.createElement("p");
-        const button = document.createElement("button");
+        card.classList.add("productCard");
+        main.append(card);
 
+        const img = document.createElement("div");
         img.classList.add("imgPlaceholder");
+        card.append(img);
+
+        const name = document.createElement("h2");
         name.textContent = product.name;
+        card.append(name);
+
+        const desc = document.createElement("p");
         desc.textContent = product.desc;
+        card.append(desc);
+
+        const categoryBox = document.createElement("span");
+        categoryBox.classList.add("category");
+        for (let category of product.category) {
+            const categories = document.createElement("span");
+            const categoryP = document.createElement("p");
+            categoryP.textContent = category;
+            categoryBox.append(categories);
+            categories.append(categoryP);
+        }
+        card.append(categoryBox);
+
+        const prNbtn = document.createElement("span");
+        const price = document.createElement("p");
         price.textContent = `${product.price} kr`;
         price.classList.add("priceClass");
-        button.textContent = "Lägg till i kundvagnen";
+        prNbtn.append(price);
 
-        main.append(card);
-        card.append(img);
-        card.append(name);
-        card.append(desc);
-        // card.append(); //kategorier
-        card.append(price);
-        card.append(button);
+        const button = document.createElement("button");
+        button.textContent = "Lägg till i kundvagnen";
+        prNbtn.append(button);
+        card.append(prNbtn);
     }
 };
 createCards(products);
