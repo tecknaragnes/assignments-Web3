@@ -98,6 +98,10 @@ div a {
     text-decoration: none;
 }
 
+main p {
+    padding: 0 0.75em;
+}
+
 
 /*----------footer----------*/
 footer {
