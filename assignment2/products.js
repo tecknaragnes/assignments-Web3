@@ -5,7 +5,8 @@ export const products = [
         "desc": "En blyerstpenna med mediumhårdhet.",
         "price": "29",
         "image": "img/",
-        "category": ["Pen", "Sketch"]
+        "category": ["Pen", "Sketch"],
+        "count": 0
     },
     {
         "id": "bp001",
@@ -13,7 +14,8 @@ export const products = [
         "desc": "En filtspetspenna i färgen skogsgrön.",
         "price": "49",
         "image": "img/",
-        "category": ["Pen", "Color", "Brush"]
+        "category": ["Pen", "Color", "Brush"],
+        "count": 0
     },
     {
         "id": "br003",
@@ -21,7 +23,8 @@ export const products = [
         "desc": "En pensel med mårdhår i storlek 3. Perfekt för akvarell.",
         "price": "59",
         "image": "img/",
-        "category": ["Color", "Brush", "Watercolor"]
+        "category": ["Color", "Brush", "Watercolor"],
+        "count": 0
     },
     {
         "id": "br008",
@@ -29,7 +32,8 @@ export const products = [
         "desc": "En pensel med mårdhår i storlek 3. Perfekt för akvarell.",
         "price": "59",
         "image": "img/",
-        "category": ["Color", "Brush", "Watercolor"]
+        "category": ["Color", "Brush", "Watercolor"],
+        "count": 0
     },
     {
         "id": "sp051",
@@ -37,7 +41,8 @@ export const products = [
         "desc": "Ett skissblock i storlek A5. 160 g/m2. 60 ark.",
         "price": "119",
         "image": "img/",
-        "category": ["Sketch", "Pad", "Paper"]
+        "category": ["Sketch", "Pad", "Paper"],
+        "count": 0
     },
     {
         "id": "wp051",
@@ -45,7 +50,8 @@ export const products = [
         "desc": "Ett akvarellblock i storlek A5. 300 g/m2. 30 ark. Slät gräng.",
         "price": "129",
         "image": "img/",
-        "category": ["Watercolor", "Pad", "Paper"]
+        "category": ["Watercolor", "Pad", "Paper"],
+        "count": 0
     },
     {
         "id": "wc001",
@@ -53,7 +59,8 @@ export const products = [
         "desc": "Akvarellfärg i kopp med färgen magenta.",
         "price": "29",
         "image": "img/",
-        "category": ["Watercolor", "Color"]
+        "category": ["Watercolor", "Color"],
+        "count": 0
     },
     {
         "id": "wc015",
@@ -61,6 +68,7 @@ export const products = [
         "desc": "Akvarellfärg i kopp med färgen koboltblå.",
         "price": "29",
         "image": "img/",
-        "category": ["Watercolor", "Color"]
+        "category": ["Watercolor", "Color"],
+        "count": 0
     }
 ];
