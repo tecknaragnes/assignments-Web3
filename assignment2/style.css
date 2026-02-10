@@ -3,6 +3,7 @@ html {
     --accentColor: #102512;
     --accentColor2: #add8b0;
     --accentColor3: #381b53;
+    --accentColor4: #2b1242;
     --BGcolor: #e4f8d6;
     --softCurves: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -44,11 +45,15 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #cardContainers .productCard {
     margin: 0.4em;
-    width: 20em;
+    /* width: 20em; */
+    min-width: 15em;
+    max-width: 20em;
+    /* Kan man köra min-max? */
     transition: background-color 0.4s;
     display: flex;
     flex-direction: column;
@@ -56,7 +61,7 @@ nav {
 }
 
 #cardContainers .productCard:hover {
-    background-color: var(--accentColor);
+    background-color: var(--accentColor4);
 }
 
 .imgPlaceholder {
@@ -94,24 +99,89 @@ nav {
 
 #cardContainers button {
     float: right;
-    margin: 1em;
+    margin: 0.75em;
     padding: 0.4em;
     font-size: 1em;
     background-color: var(--accentColor2);
+    transition: background-color 0.4s;
     border: 0;
     border-radius: var(--softCurves);
     box-shadow: 0.2em 0.2em 5px var(--accentColor);
+    cursor: pointer;
+}
+
+#cardContainers button:hover {
+    background-color: var(--BGcolor);
 }
 
 
 /* ----------kundvagn---------- */
 #shoppingCart {
     grid-area: aside;
+    display: flex;
+    flex-direction: column;
     padding: 0 0.75em;
+    color: #fff;
     background-color: var(--accentColor3);
+    border-left: 0.4em solid var(--accentColor4);
 }
 
-/* #shoppingCart */
+#shoppingCart #cartList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+    /* Border eller något runt eller mellan objekt */
+}
+
+#shoppingCart .cartItem:first-child {
+    border-top: 0.4em solid var(--accentColor4);
+    padding-top: 1em;
+}
+
+#shoppingCart .cartItem {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-bottom: 0.4em solid var(--accentColor4);
+}
+
+.cartItem .top {
+    display: flex;
+    flex-direction: row;
+}
+
+#shoppingCart .price {
+    margin-left: auto;
+}
+
+#shoppingCart .number {
+    margin-left: auto;
+    /* Hur flyttar jag ner antal under pris??? */
+}
+
+#shoppingCart button {
+    margin: 0.75em;
+    margin-top: auto;
+    padding: 0.4em;
+    font-size: 1em;
+    background-color: var(--accentColor2);
+    transition: background-color 0.4s;
+    border: 0;
+    border-radius: var(--softCurves);
+    box-shadow: 0.2em 0.2em 5px var(--accentColor);
+    cursor: pointer;
+}
+
+#shoppingCart button:hover {
+    background-color: var(--BGcolor);
+}
+
+#totalSum {
+    /* margin-top: auto; */
+}
 
 
 /* ----------footer---------- */
