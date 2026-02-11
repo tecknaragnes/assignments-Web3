@@ -146,9 +146,10 @@ nav {
     flex-direction: column;
     flex-wrap: nowrap;
     border-bottom: 0.4em solid var(--accentColor4);
+    font-size: 16px;
 }
 
-.cartItem .top {
+.cartItem .topRow {
     display: flex;
     flex-direction: row;
 }
@@ -157,7 +158,7 @@ nav {
     margin-left: auto;
 }
 
-#shoppingCart .number {
+#shoppingCart .bottomRow {
     margin-left: auto;
     /* Hur flyttar jag ner antal under pris??? */
 }

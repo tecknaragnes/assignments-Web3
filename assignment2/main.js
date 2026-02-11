@@ -18,7 +18,26 @@ const renderShoppingcart = () => {
 
     cartList.innerHTML = ""; //töm kundvagnen så att det inte dubbleras vid omladdning
 
-
+    for (const product of data) {
+        if (product.count > 0) {
+            const li = document.createElement("li");
+            li.classList.add("cartItem");
+            const row1 = document.createElement("span");
+            const h3 = document.createElement("h3");
+            const price = document.createElement("p");
+            row1.classList.add("topRow");
+            h3.textContent = `${product.name}`;
+            price.textContent = `${product.price} kr`;
+            price.classList.add("price");
+            row1.append(h3, price);
+            li.append(row1);
+            const count = document.createElement("p");
+            count.textContent = `${product.count} st`;
+            count.classList.add("bottomRow");
+            li.append(count);
+            cartList.append(li);
+        }
+    }
 }
 renderShoppingcart();
 
