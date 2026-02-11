@@ -14,8 +14,8 @@ const createCards = (products) => { // funktionen skapa produktkort
         card.classList.add(`${product.id}`)
         main.append(card);
 
-        const img = document.createElement("div"); //bildelementet
-        img.classList.add("imgPlaceholder");
+        const img = document.createElement("img"); //bildelementet
+        img.src = `img/${product.image}.jpg`;
         card.append(img);
 
         const name = document.createElement("h2"); //produktnamn
@@ -59,7 +59,9 @@ const renderShoppingcart = () => {
 
     const data = JSON.parse(localStorage.getItem("productData")); //hämta alla objekt från localStorage
 
-    cartList.innerHTML = "";
+    cartList.innerHTML = ""; //töm kundvagnen så att det inte dubbleras vid omladdning
+
+
 }
 renderShoppingcart();
 

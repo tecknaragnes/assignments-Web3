@@ -64,11 +64,11 @@ nav {
     background-color: var(--accentColor4);
 }
 
-.imgPlaceholder {
+.productCard img {
     width: auto;
-    height: 17em;
-    background-color: var(--BGcolor);
-    box-shadow: var(--accentColor);
+    aspect-ratio: 1;
+    padding: 0;
+    border-radius: var(--softCurves);
 }
 
 #cardContainers .productCard p {
