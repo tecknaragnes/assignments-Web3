@@ -133,20 +133,22 @@ nav {
     gap: 1em;
     list-style: none;
     padding: 0;
-    /* Border eller något runt eller mellan objekt */
 }
 
-#shoppingCart .cartItem:first-child {
-    border-top: 0.4em solid var(--accentColor4);
-    padding-top: 1em;
+#shoppingCart h3 {
+    font-size: 18px;
+    margin: 0;
 }
 
 #shoppingCart .cartItem {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    border-bottom: 0.4em solid var(--accentColor4);
-    font-size: 16px;
+    background-color: var(--accentColor4);
+    border-radius: var(--softCurves);
+    font-size: 18px;
+    padding: 0.75em;
+    margin: 0;
 }
 
 .cartItem .topRow {
@@ -155,12 +157,13 @@ nav {
 }
 
 #shoppingCart .price {
+    margin: 0;
     margin-left: auto;
 }
 
 #shoppingCart .bottomRow {
+    margin: 0.75em 0 0;
     margin-left: auto;
-    /* Hur flyttar jag ner antal under pris??? */
 }
 
 #shoppingCart button {

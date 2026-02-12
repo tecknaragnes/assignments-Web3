@@ -6,7 +6,7 @@ export const products = [
         "price": "29",
         "image": "bl001",
         "category": ["Pen", "Sketch"],
-        "count": 0
+        "count": 2
     },
     {
         "id": "bp001",
@@ -15,7 +15,7 @@ export const products = [
         "price": "49",
         "image": "bp001",
         "category": ["Pen", "Color", "Brush"],
-        "count": 0
+        "count": 3
     },
     {
         "id": "br003",

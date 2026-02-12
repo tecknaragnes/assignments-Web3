@@ -37,7 +37,15 @@ export const createCards = (products) => { // funktionen skapa produktkort
 
         const button = document.createElement("button"); //köp-knapp
         button.classList.add("addBtn");
+        button.classList.add(`${product.id}`);
         button.textContent = "Lägg till i kundvagnen";
+
+        button.addEventListener("click", () => {
+            ++product.count;
+            localStorage.setItem("productsData", JSON.stringify(products));
+            renderShoppingcart();
+        })
+
         prNbtn.append(button);
         card.append(prNbtn);
     }
