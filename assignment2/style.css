@@ -123,7 +123,7 @@ nav {
     padding: 0 0.75em;
     color: #fff;
     background-color: var(--accentColor3);
-    border-left: 0.4em solid var(--accentColor4);
+    border: 0.4em solid var(--accentColor4);
 }
 
 #shoppingCart #cartList {
@@ -183,8 +183,19 @@ nav {
     background-color: var(--BGcolor);
 }
 
+#total {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#total h2 {
+    margin-right: auto;
+}
+
 #totalSum {
-    /* margin-top: auto; */
+    margin: 22px 0 16px 0;
+
 }
 
 

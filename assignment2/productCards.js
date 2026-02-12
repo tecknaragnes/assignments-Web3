@@ -1,6 +1,9 @@
-export const createCards = (products) => { // funktionen skapa produktkort
+export const renderCards = () => { // funktionen skapa produktkort
+    const parsedData = JSON.parse(localStorage.getItem("productData")); //hämta produkter från localStorage
+
     const main = document.getElementById("cardContainers");
-    for (let product of products) { //alla produkter
+    main.innerHTML = "";
+    for (let product of parsedData) { //alla produkter
         const card = document.createElement("div"); //kortet
         card.classList.add("productCard");
         card.classList.add(`${product.id}`)
@@ -20,10 +23,10 @@ export const createCards = (products) => { // funktionen skapa produktkort
 
         const categoryBox = document.createElement("span"); //behållare för kategorier
         categoryBox.classList.add("category");
-        for (let category of product.category) {
+        for (let category of product.category) { //gå igenom de olika kategorierna
             const categories = document.createElement("span");
             const categoryP = document.createElement("p");
-            categoryP.textContent = category; //kategorierna
+            categoryP.textContent = category; //själva kategorierna
             categoryBox.append(categories);
             categories.append(categoryP);
         }
@@ -40,11 +43,12 @@ export const createCards = (products) => { // funktionen skapa produktkort
         button.classList.add(`${product.id}`);
         button.textContent = "Lägg till i kundvagnen";
 
+        //----------Lägg till i kundvagn----------
         button.addEventListener("click", () => {
-            ++product.count;
-            localStorage.setItem("productsData", JSON.stringify(products));
-            renderShoppingcart();
-        })
+            product.count += 1; //ökar antal i localStorage
+            localStorage.setItem("productData", JSON.stringify(parsedData));
+            renderShoppingcart(); //renderar om kundvagnen
+        });
 
         prNbtn.append(button);
         card.append(prNbtn);
