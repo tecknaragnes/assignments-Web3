@@ -24,6 +24,3 @@ emptyCartBtn.addEventListener("click", emptyCart);
 
 renderShoppingcart(); //kalla på funktionen som skapar kundvagnen
 renderCards(products); //kör funktionen som skapar korten
-
-
-//Nu funkar ju tyvärr inte klickhanteraren när man klickar på "Lägg till i kundvagnen", men ändringen sparas

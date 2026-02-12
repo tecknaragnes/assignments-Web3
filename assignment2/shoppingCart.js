@@ -2,7 +2,6 @@ export const renderShoppingcart = () => {
     const cartList = document.getElementById("cartList"); //hitta aside/kundvagn-område
 
     const data = JSON.parse(localStorage.getItem("productData")); //hämta alla objekt från localStorage
-
     cartList.innerHTML = ""; //töm kundvagnen så att det inte dubbleras vid omladdning
     //värde innan här som lägger ihop alla priser i loopen och lägga i totalsum sen
     let totalPrice = 0; //starta räkning
