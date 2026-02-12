@@ -2,7 +2,6 @@ export const renderShoppingcart = () => {
     const cartList = document.getElementById("cartList"); //hitta aside/kundvagn-område
 
     const data = JSON.parse(localStorage.getItem("productData")); //hämta alla objekt från localStorage
-    // console.log(data); //8 produkter
 
     cartList.innerHTML = ""; //töm kundvagnen så att det inte dubbleras vid omladdning
     //värde innan här som lägger ihop alla priser i loopen och lägga i totalsum sen
@@ -11,6 +10,7 @@ export const renderShoppingcart = () => {
         if (product.count > 0) { //skapa produkterna i kundvagnen som har fler än 0 i antal
             totalPrice += product.price * product.count; //lägg ihop pris per vara
 
+            //skapa element i kundvagnen
             const li = document.createElement("li");
             li.classList.add("cartItem");
             const row1 = document.createElement("span");

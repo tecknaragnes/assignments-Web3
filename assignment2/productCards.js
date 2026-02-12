@@ -1,3 +1,5 @@
+import { renderShoppingcart } from "./shoppingCart.js";
+
 export const renderCards = () => { // funktionen skapa produktkort
     const parsedData = JSON.parse(localStorage.getItem("productData")); //hämta produkter från localStorage
 
@@ -46,7 +48,7 @@ export const renderCards = () => { // funktionen skapa produktkort
         //----------Lägg till i kundvagn----------
         button.addEventListener("click", () => {
             product.count += 1; //ökar antal i localStorage
-            localStorage.setItem("productData", JSON.stringify(parsedData));
+            localStorage.setItem("productData", JSON.stringify(parsedData)); //uppdaterar count till localStorage
             renderShoppingcart(); //renderar om kundvagnen
         });
 
