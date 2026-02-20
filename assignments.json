@@ -12,5 +12,12 @@
         "title": "Uppgift 2 - Produktsida med kundvagn",
         "link": "assignment2/index.html",
         "description": "Dynamiskt skapa en produktsida som renderar produkter från objekt, och implementera en kundvagnsfunktion."
+    },
+    {
+        "id": "wU3",
+        "nr": "Uppgift 3",
+        "title": "Uppgift 3 - Turneringsgenerator",
+        "link": "assignment3/index.html",
+        "description": "Visualisera ett sluspel i en turnering. Turneringen går igenom ett träd av matcher där spelare går vidare till nästa omgång. Matcherna simuleras eller väljs manuellt via gränssnittet."
     }
 ]

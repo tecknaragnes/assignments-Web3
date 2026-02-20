@@ -1,0 +1,58 @@
+[
+    {
+        "id": "c-001",
+        "name": "Brice",
+        "image": "img/Brice.png",
+        "skillLevel": 8,
+        "catchphrase": "Jag håller huvudet högt!"
+    },
+    {
+        "id": "c-002",
+        "name": "Cassandra",
+        "image": "img/Cass.png",
+        "skillLevel": 7,
+        "catchphrase": "Mig tar du inte fatt!"
+    },
+    {
+        "id": "c-003",
+        "name": "Devian",
+        "image": "img/Dev.png",
+        "skillLevel": 6,
+        "catchphrase": "Jag har kraften av gudarna på min sida."
+    },
+    {
+        "id": "c-004",
+        "name": "Kyr",
+        "image": "img/Kyr.png",
+        "skillLevel": 9,
+        "catchphrase": "Min stridsklubba kommer du inte undan!"
+    },
+    {
+        "id": "c-005",
+        "name": "Silas",
+        "image": "img/Silas.png",
+        "skillLevel": 7,
+        "catchphrase": "Jag fäktas för mina vänner!"
+    },
+    {
+        "id": "c-006",
+        "name": "Vesryn",
+        "image": "img/Ves.png",
+        "skillLevel": 5,
+        "catchphrase": null
+    },
+    {
+        "id": "c-007",
+        "name": "Zeg",
+        "image": "img/Zeg.png",
+        "skillLevel": 4,
+        "catchphrase": "..."
+    },
+    {
+        "id": "c-008",
+        "name": "Lloyd",
+        "image": "img/Lloyd.png",
+        "skillLevel": 4,
+        "catchphrase": "Var beredd på en explosion av magi!"
+    }
+]
