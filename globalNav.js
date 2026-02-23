@@ -10,8 +10,9 @@ const currentPage = body.dataset.currentpage; //kollar vilken sida vi är på
 console.log("Current page: ", currentPage); //säger home på rätt ställe
 
 const fillNav = (assignments) => {
-    // ul.innerHTML = "";
+    ul.innerHTML = ""; //kan den behöva sättas på igen?
     const homeLi = document.createElement("li"); //skapa listelement för hem
+
     if (currentPage == "home") { //om vi är på startsidan
         homeLi.classList.add("currentPage"); //så att det syns på nav att vi är här
         homeLi.innerHTML = `<a href="index.html">Hem</a>`;
@@ -21,24 +22,19 @@ const fillNav = (assignments) => {
             ul.append(li); //lägger till listelementen i listan
         }
     }
-    else if (currentPage == "wU1") { //om vi är på uppgift 1
+
+    else {
         homeLi.innerHTML = `<a href="../index.html">Hem</a>`;
         for (const assignment of assignments) {
             const li = document.createElement("li");
-            assignment.id == "wU1" ? li.classList.add("currentPage") : ""; //lägga current på rätt element
-            li.innerHTML = assignment.id == "wu1" ? `<a href='index.html'>${assignment.nr}</a>` : `<a href=../${assignment.link}>${assignment.nr}</a>`; //så att länkarna blir rätt
+            li.innerHTML = `<a href=../${assignment.link}>${assignment.nr}</a>`;
             ul.append(li);
+            if (assignment.id == currentPage) { //om id:t på uppgiften är samma som den sida vi är på
+                li.classList.add("currentPage"); //lägg på klassen currentPage så att det syns i nav att vi är där
+            }
         }
     }
-    else if (currentPage == "wU2") {
-        homeLi.innerHTML = `<a href="../index.html">Hem</a>`;
-        for (const assignment of assignments) {
-            const li = document.createElement("li");
-            assignment.id == "wU2" ? li.classList.add("currentPage") : "";
-            li.innerHTML = assignment.id == "wu2" ? `<a href='index.html'>${assignment.nr}</a>` : `<a href=../${assignment.link}>${assignment.nr}</a>`;
-            ul.append(li);
-        }
-    }
+
     ul.prepend(homeLi); //lägga home först
 
 
