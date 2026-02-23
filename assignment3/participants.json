@@ -10,21 +10,21 @@
         "id": "c-002",
         "name": "Cassandra",
         "image": "img/Cass.png",
-        "skillLevel": 7,
+        "skillLevel": 5,
         "catchphrase": "Mig tar du inte fatt!"
     },
     {
         "id": "c-003",
         "name": "Devian",
         "image": "img/Dev.png",
-        "skillLevel": 6,
+        "skillLevel": 4,
         "catchphrase": "Jag har kraften av gudarna på min sida."
     },
     {
         "id": "c-004",
         "name": "Kyr",
         "image": "img/Kyr.png",
-        "skillLevel": 9,
+        "skillLevel": 7,
         "catchphrase": "Min stridsklubba kommer du inte undan!"
     },
     {
@@ -45,14 +45,14 @@
         "id": "c-007",
         "name": "Zeg",
         "image": "img/Zeg.png",
-        "skillLevel": 4,
+        "skillLevel": 9,
         "catchphrase": "..."
     },
     {
         "id": "c-008",
         "name": "Lloyd",
         "image": "img/Lloyd.png",
-        "skillLevel": 4,
+        "skillLevel": 6,
         "catchphrase": "Var beredd på en explosion av magi!"
     }
 ]
