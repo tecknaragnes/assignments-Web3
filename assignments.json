@@ -19,5 +19,12 @@
         "title": "Uppgift 3 - Turneringsgenerator",
         "link": "assignment3/index.html",
         "description": "Visualisera ett sluspel i en turnering. Turneringen går igenom ett träd av matcher där spelare går vidare till nästa omgång. Matcherna simuleras eller väljs manuellt via gränssnittet."
+    },
+    {
+        "id": "wU4",
+        "nr": "Uppgift 4",
+        "title": "Uppgift 4 - Spökhus",
+        "link": "assignment4/index.html",
+        "description": "Skapa en sida där man kan boka vistelse på olika spökhus. Datadrivet med dynamiskt skapade sidors."
     }
 ]
