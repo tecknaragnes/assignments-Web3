@@ -52,7 +52,7 @@
         "id": "c-008",
         "name": "Lloyd",
         "image": "img/Lloyd.png",
-        "skillLevel": 6,
+        "skillLevel": null,
         "catchphrase": "Var beredd på en explosion av magi!"
     }
 ]
