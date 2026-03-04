@@ -2,6 +2,7 @@ export class Match { //klass för en match
     #participant1; //privat fält för 2 deltagare
     #participant2;
     #winner; //privat fält för vinnare
+    // loser; //förloraren, för att kunna markera den i html, kanske inte behövs? Kanske kan kolla i renderMatch istället vem som är förlorare och ge den klassen .loser där? kan man göra ngt med html här?
     isPlayed = false; //om matchen är spelad
 
     constructor(participant1, participant2) { //två deltagare som argument
@@ -19,7 +20,7 @@ export class Match { //klass för en match
         return this.#winner;
     }
     getIsPlayed() { //metod för att kolla om matchen är spelad
-        return isPlayed; //isPlayed ska vara med, men osäker än hur jag ska använda
+        return this.isPlayed; //isPlayed ska vara med, men osäker än hur jag ska använda
     }
 
     renderMatch() { //rendera matchen på sidan
