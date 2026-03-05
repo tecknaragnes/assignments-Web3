@@ -28,20 +28,34 @@ section#intro {
     cursor: pointer;
 }
 
+#intro button:disabled {
+    background-color: #695879;
+    cursor: not-allowed;
+}
+
 
 /* ----- Turnerningsdelen ----- */
 #headers {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    /* align-items: stretch; */
     /* Sträcker ut rundorna vertikalt */
     gap: 2rem;
-    padding: 1.75em;
+    padding: 0.4em 1.75em 0;
     margin: 0.2em 0;
-    min-width: 280px;
-    max-width: 310px;
-    align-self: center;
-    /* Puttar ner allt längst ner. Ska man fixa egna element ovanför? */
+}
+
+#headers h3 {
+    display: inline-block;
+    width: 318px;
+    justify-self: center;
+    /* Varför funkar inte denna??? Jag vill ha dem centralt i lådorna */
+    margin: 0;
+    padding: 0.4em 0;
+    font-size: 1.2em;
+    color: var(--accentColor);
+    background-color: #cee4c6;
+    border-radius: var(--softCurves);
 }
 
 #bracket {
@@ -50,7 +64,7 @@ section#intro {
     align-items: stretch;
     /* Sträcker ut rundorna vertikalt */
     gap: 2rem;
-    padding: 1.75em;
+    padding: 0.5em 1.75em;
 }
 
 .round {
@@ -83,7 +97,8 @@ section#intro {
     font-weight: bold;
 }
 
-.participant {
+.participant1,
+.participant2 {
     border-radius: var(--softCurves);
     display: flex;
     flex-direction: row;
@@ -91,14 +106,15 @@ section#intro {
     padding: 0 0.1em;
 }
 
-.participant img {
+.participant1 img,
+.participant2 img {
     height: 125px;
     align-self: center;
 }
 
 .loser {
     color: gray;
-    background-color: #baccad;
+    background-color: #cee4c6;
 }
 
 .loser img {
