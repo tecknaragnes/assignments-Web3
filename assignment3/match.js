@@ -2,7 +2,6 @@ export class Match { //klass för en match
     #participant1; //privat fält för 2 deltagare
     #participant2;
     #winner; //privat fält för vinnare
-    #loser; //fält för förlorare för att markera på sidan
     isPlayed = false; //om matchen är spelad
     matchBlock; //komma åt matchblocket utifrån
 
@@ -64,16 +63,11 @@ export class Match { //klass för en match
     markLoser() {
         let loserBlock;
         if (this.#participant1 == this.#winner) { // spelaren som inte är Winner
-            this.#loser = this.#participant2;
             loserBlock = this.matchBlock.querySelector(".participant2"); // hitta deltagarblocket med förloraren
-            // console.log(loserBlock);
         }
         else { // participant 1 eller 2
-            this.#loser = this.#participant1;
             loserBlock = this.matchBlock.querySelector(".participant1"); // hitta deltagarblocket med förloraren
-            // console.log(loserBlock);
         }
-        // console.log(this.#loser); //hittar rätt förlorare
         loserBlock.classList.add("loser"); // lägg till klassen .loser
     }
 }
