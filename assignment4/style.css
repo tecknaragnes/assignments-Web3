@@ -1,6 +1,6 @@
 /*----------generellt----------*/
 html {
-    --accentColor: #1c023a;
+    --accentColor: #160b24;
     --accentColor2: #ac4a0a;
     --accentColor3: #f8c32f;
     --BGcolor: #080808;
@@ -23,6 +23,7 @@ h3 {
     font-family: Limelight, "Segoe UI", sans-serif;
 }
 
+
 /*----------header----------*/
 header {
     background-color: var(--accentColor2);
@@ -30,12 +31,34 @@ header {
     padding: 0.2em 0.75em;
 }
 
-/* ----------formulär---------- */
+
+/* ----------filter---------- */
 form {
     color: #fff;
-    /* display: flex;
-    flex-direction: row; */
+    background-color: var(--accentColor);
+    margin-bottom: 1em;
+    padding: 1em;
 }
+
+form h2 {
+    margin-top: 0;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+    gap: 1.4em;
+    border: unset;
+    padding: 0;
+}
+
+label {
+    width: 250px;
+    /* denna ger inte bredden tho... */
+}
+
+/* dropdown inherit font */
+
 
 /* ----------House of Cards---------- */
 #houseDiv {
