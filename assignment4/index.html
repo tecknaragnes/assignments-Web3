@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='1em' font-size='80'>🐸</text></svg>">
     <link rel="stylesheet" href="style.css">
-    <!-- <script type="module" src="../globalNav.js"></script> behöver jag alltså inte ha med denna?-->
     <script type="module" src="main.js"></script>
     <title>Uppgift 4</title>
 </head>
@@ -21,18 +20,40 @@
         <form id="filter">
             <h2>Filtrering</h2>
 
-            <label for="maxPrice">Maxpris per natt</label>
-            <input type="range" name="maxPrice" id="maxPrice" max="3500" min="0">
-            <!-- visa value dynamiskt -->
-
-            <label for="scareLevel">Skräcknivå</label>
-            <input type="range" name="scareLevel" id="scareLevel" min="1" max="5">
-
-            <label>Spöktyp</label>
-            <!-- dropdown i upg, men kanske checkbox? -->
-
-            <label for="wifi">Wifi-krav?</label>
-            <input type="checkbox" name="wifi" id="wifi">
+            <fieldset>
+                <span>
+                    <label for="maxPrice">Maxpris per natt: <span id="priceValue">3500</span> kr</label>
+                    <input type="range" name="maxPrice" id="maxPrice" max="3500" min="150" value="3500">
+                </span>
+                <span>
+                    <label for="scareLevel">Lägsta skräcknivå: <span id="scareValue">Mysigt</span></label>
+                    <input type="range" name="scareLevel" id="scareLevel" min="1" max="5" value="1">
+                </span>
+                <span>
+                    <label for="ghostType">Spöktyp</label>
+                    <select id="ghostType" name="ghostType">
+                        <option value="all">Visa alla...</option>
+                        <option value="det onämnbara">Det onämnbara</option>
+                        <option value="dimvandare">Dimvandare</option>
+                        <option value="huvudlös riddare">Huvudlös riddare</option>
+                        <option value="industrispöke">Industrispöke</option>
+                        <option value="kedjerassel">Kedjerassel</option>
+                        <option value="kosmisk entitet">Kosmisk entitet</option>
+                        <option value="odöd katt">Odöd katt</option>
+                        <option value="poltergeist">Poltergeist</option>
+                        <option value="sjöspöke">Sjöspöke</option>
+                        <option value="skuggvarelse">Skuggvarelse</option>
+                        <option value="tvillingspöken">Tvillingspöken</option>
+                        <option value="vampyr">Vampyr</option>
+                        <option value="vit dam">Vit dam</option>
+                        <option value="vittra">Vittra</option>
+                    </select>
+                </span>
+                <span>
+                    <input type="checkbox" name="wifi" id="wifi">
+                    <label for="wifi">Måste finnas WiFi</label>
+                </span>
+            </fieldset>
         </form>
 
         <div id="houseDiv">
