@@ -1,4 +1,5 @@
-
+const response = await fetch("houses.json");
+const houses = await response.json(); //hämtas med fetch
 
 
 //-------------------------------------------------
