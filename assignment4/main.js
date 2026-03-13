@@ -1,15 +1,14 @@
-try {
-
-} catch (err) {
-
+let houses;
+try { // Använd try/catch i fetch
+    const response = await fetch("houses.json");
+    houses = await response.json(); //hämtas med fetch 
 }
-const response = await fetch("houses.json");
-const houses = await response.json(); //hämtas med fetch
-// Använd try/catch i fetch
+catch (err) {
+    //felmeddelande om husen inte laddas/hämtas
+}
 
 
 //------------------------------------------------------------
-console.log(houses); //alla 12 hus är med
 const houseDiv = document.getElementById("houseDiv");
 
 const renderHouses = (house) => {
@@ -40,7 +39,44 @@ renderHouses(houses); // Alla hus ska visas när sidan laddas.
 
 
 //------------------------------------------------------------
-// Filterformulär med minst: maxpris per natt, lägsta skräcknivå (range-slider med dynamisk textetikett), typ av spöke (dropdown med alla typer + “Alla typer”), och WiFi-krav (checkbox).
+const priceSlider = document.getElementById("maxPrice");
+const priceValue = document.getElementById("priceValue");
+
+priceSlider.addEventListener("input", () => {
+    priceValue.textContent = priceSlider.value;
+    // filtrera med array.filter()
+});
+
+
+const scareSlider = document.getElementById("scareLevel");
+const scareValue = document.getElementById("scareValue");
+const scareArray = ["Mysigt", "Lite läskigt", "Obehagligt", "Skräckinjagande", "Ren terror"];
+
+scareSlider.addEventListener("input", () => {
+    let index = Number(scareSlider.value) - 1;
+    console.log(index);
+    scareValue.textContent = scareArray[index];
+    // händelselyssnaren funkar, men den fukkar ju lite med texten som ändrar var slidern är, så den skiftar fram och tillbaka när man drar
+});
+
+
+const ghostType = document.getElementById("ghostType");
+
+ghostType.addEventListener("change", () => {
+    //array.filter()
+})
+
+
+const wifiCheckbox = document.getElementById("wifi");
+
+wifiCheckbox.addEventListener("change", () => {
+    if (wifiCheckbox.checked) {
+        //array.filter()
+    } else {
+        //tömma sökningen
+    }
+})
+// Filterformulär: typ av spöke (dropdown med alla typer + “Alla typer”)
 // När filterformuläret ändras ska husen filtreras i realtid utan att sidan laddas om. Använd input- eller change-event för att fånga ändringar, vilket du tycker passar bäst för varje formulärelement.
 // Filtreringen görs med Array.filter() baserat på de valda kriterierna.
 // Visa meddelande om inga hus matchar filtreringen, det räcker inte att visa en tom sida.
@@ -56,14 +92,6 @@ renderHouses(houses); // Alla hus ska visas när sidan laddas.
 // Översiktssidan (index.html)
 // Varje hus visas med bild, namn, plats, pris per natt, skräcknivå (som text), och en “Läs mer och boka”-knapp som länkar till detaljsidan med rätt id i URL:en (t.ex. house.html?id=1).
 
-// Detaljsidan (house.html)
-// På detaljsidan visas fullständig information om det valda huset, och här finns också ett bokningsformulär. Här ska också integreras data från ett externt API (antingen väder, platsfoto, karta eller om du själv har en annan idé) som är relevant för husets plats.
-// Hus-id skall läsas av från URL:en.
-// Använd hus-id tillsammans med Array.find() för att hitta rätt hus i datan.
-// Om hus-id saknas eller är ogiltigt (dvs. inget hus med det id:t finns) ska ett tydligt felmeddelande visas i gränssnittet, tillsammans med en länk tillbaka till översiktssidan.
-// Visa fullständig hus-information: bild, namn, plats, beskrivning, pris, skräcknivå (text), spöktyper, WiFi-status.
-// En tydlig länk tillbaka till översiktssidan.
-
 // API-integration
 // Extern data via REST API — hämta och visa data från ett externt API med fetch(). Hantera eventuella API-fel med try/catch. Välj minst ett alternativ:
 // A — Väder: Aktuellt väder via Open-Meteo baserat på husets koordinater (gratis, ingen API-nyckel)
@@ -76,6 +104,6 @@ renderHouses(houses); // Alla hus ska visas när sidan laddas.
 
 //to do--------------
 // - try/catch
-// - input/change-eventlyssnare
-// - dynamiskt visa range-value
+// X input/change-eventlyssnare
+// X dynamiskt visa range-value
 // - array.filer() för att visa sökresultat
