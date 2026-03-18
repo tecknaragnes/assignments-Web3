@@ -22,8 +22,8 @@
 
             <fieldset>
                 <span>
-                    <label for="maxPrice">Maxpris per natt: <span id="priceValue">3500</span> kr</label>
-                    <input type="range" name="maxPrice" id="maxPrice" max="3500" min="150" value="3500">
+                    <label for="maxPrice">Maxpris per natt: </label>
+                    <input type="number" name="maxPrice" id="maxPrice" placeholder="t.ex. 1800">
                 </span>
                 <span>
                     <label for="scareLevel">Lägsta skräcknivå: <span id="scareValue">Mysigt</span></label>
@@ -56,9 +56,10 @@
             </fieldset>
         </form>
 
-        <div id="houseDiv">
-            <span id="errorMessage"></span>
-        </div>
+        <span>
+            <p id="errorMessage"></p>
+        </span>
+        <div id="houseDiv"></div>
     </main>
 
     <footer>
