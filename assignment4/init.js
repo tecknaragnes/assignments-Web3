@@ -9,6 +9,12 @@ export const renderHouses = (house) => {
         const houseCard = document.createElement("div");
         houseCard.classList.add("houseCard");
         let index = Number(h.scareLevel) - 1;
+        let wifi;
+        if (h.hasWifi) {
+            wifi = "WiFi finns"
+        } else {
+            wifi = "Inget WiFi"
+        }
 
         houseCard.innerHTML = `
             <img src="img/${h.image}" alt="">
@@ -16,7 +22,7 @@ export const renderHouses = (house) => {
             <p>${h.location}</p>
             <span class="flexSpan"> 
                 <p class="scares">${scareArray[index]}</p>
-                <p class="wifi">${h.hasWifi}</p>
+                <p class="wifi">${wifi}</p>
             </span>
             <span class="flexSpan">
                 <p>${h.pricePerNight} kr/natt</p>
