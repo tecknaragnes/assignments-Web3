@@ -29,5 +29,5 @@ export const renderHouses = (house) => {
                 <a href="house.html?id=${h.id}">Läs mer och boka</a>
             </span>`;
         houseDiv.append(houseCard);
-    } // hasWifi ska göras om till symbol eller text
+    }
 }

@@ -1,7 +1,8 @@
 import { listeners } from "./filtering.js";
 import { renderHouses } from "./init.js";
 
-const errorMsgSpan = document.getElementById("erroeMessage");
+const errorMsgSpan = document.getElementById("errorMessage");
+errorMsgSpan.style.visibility = "hidden";
 
 
 //----------------------------------------------------------
@@ -11,19 +12,14 @@ try { // Använd try/catch i fetch
     houses = await response.json(); //hämtas med fetch 
 }
 catch (err) {
-    // errorMsgSpan.textContent = err.message;
+    errorMsgSpan.style.visibility = "visible";
+    errorMsgSpan.textContent = err.message;
     //felmeddelande om husen inte laddas/hämtas
 }
 
 
-//--------------------------------------------------------
-// errorMsgSpan.
-
-
-
 renderHouses(houses); // Alla hus ska visas när sidan laddas.
 listeners();
-// filterResult();
 
 
 //------------------------------------------------------------
@@ -36,9 +32,4 @@ listeners();
 
 //to do--------------
 // \ try/catch (var mer kan man använda denna?)
-// X input/change-eventlyssnare
-// X dynamiskt visa range-value
-// \ array.filer() för att visa sökresultat
-// X visa scareLevel som text i huskorten
-// - visa hasWifi som symbol (eller som text "har WiFi")
 // \ fixa länken på "läs mer"-knappen
