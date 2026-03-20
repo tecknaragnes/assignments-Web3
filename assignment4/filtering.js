@@ -24,30 +24,36 @@ let wifiCheck;
 
 const filterResult = () => {
     let filtered;
-    let priceFilter = price ?? 3000;
+    let priceFilter = price ?? 3500;
     if (price == "") {
-        priceFilter = 3000;
+        priceFilter = 3500;
     }
     let scareIndex = index ?? 0;
-    // console.log("Spöke", ghost);
 
-    if (wifiCheck !== true) {
+    if (ghost === "all") {
+        ghost = "";
+    }
+
+    const ghostMatch = (h) => !ghost || h.ghostTypes.includes(ghost); //går igenom arrayen ghostTypes
+
+    if (wifiCheck !== true) { //wifi alla
         filtered = houses.filter(h =>
             h.pricePerNight < priceFilter
             && h.scareLevel > scareIndex
-            // && h.ghostType == ghost
+            && ghostMatch(h)
         );
-    } else {
+    } else { //bara de med wifi
         filtered = houses.filter(h =>
             h.pricePerNight < priceFilter
             && h.scareLevel > scareIndex
-            // && h.ghostType == ghost
+            && ghostMatch(h)
             && h.hasWifi == wifiCheck
         );
     }
+    console.log(filtered);
 
     renderHouses(filtered);
-    if (filtered == "") {
+    if (filtered.length === 0) {
         errorMsgSpan.style.visibility = "visible";
         errorMsgSpan.textContent = "Det finns inga spöken på sökningen du gjort! 👻 Testa en annan sökning istället!"; // om resultatet är tomt, visa ett felmeddelande
     } else {
