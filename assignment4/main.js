@@ -13,7 +13,8 @@ try { // Använd try/catch i fetch
 }
 catch (err) {
     errorMsgSpan.style.visibility = "visible";
-    errorMsgSpan.textContent = err.message;
+    errorMsgSpan.textContent = "Ett fel har uppstått! 👻 Spöken har fastnat någonstans på hemsidan, så försök igen senare. "
+    errorMsgSpan.textContent += `(${err.message})`;
     //felmeddelande om husen inte laddas/hämtas
 }
 
@@ -23,13 +24,6 @@ listeners();
 
 
 //------------------------------------------------------------
-// Använd try/catch för att fånga fel vid fetch()-anrop och annan logik som kan misslyckas.
-// Felmeddelanden ska visas i gränssnittet med tydlig visuell styling, inte bara loggas i konsolen.
-
 // Översiktssidan (index.html)
 // Varje hus visas med en “Läs mer och boka”-knapp som länkar till detaljsidan med rätt id i URL:en (t.ex. house.html?id=1).
-
-
-//to do--------------
-// \ try/catch (var mer kan man använda denna?)
 // \ fixa länken på "läs mer"-knappen
