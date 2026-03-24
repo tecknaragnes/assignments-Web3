@@ -39,7 +39,7 @@
                     <input type="date" min="2026-03-29" id="start-date" required>
                     <!-- incheckningsdatum (datum, obligatoriskt, inte tidigare än dagens datum) -->
                     <label for="number-nights">Antal nätter:</label>
-                    <input type="number" min="1" id="number-nights" required>
+                    <input type="number" min="1" id="number-nights" value="1" required>
                     <!-- antal dagar (nummer, obligatoriskt, min 1) -->
                 </fieldset>
 
@@ -47,18 +47,18 @@
                     <p id="add-ons">Tillägg:</p>
                     <!-- Minst tre olika, frivilliga tillägg (checkboxar) som påverkar priset, t.ex. “Frukost”, “Spökvandring” och “Nattlig seans” -->
                     <span>
-                        <input type="checkbox" id="dinner" name="food" value="dinner">
+                        <input type="checkbox" id="dinner" name="food" value="139">
                         <label for="dinner">Middag (139 kr/natt)</label>
                     </span>
                     <span>
-                        <input type="checkbox" id="breakfast" name="food" value="breakfast">
+                        <input type="checkbox" id="breakfast" name="food" value="99">
                         <label for="breakfast">Frukost (99 kr/natt)</label>
                     </span>
                     <span>
-                        <input type="checkbox" id="ghost-walk" name="activity" value="ghost-walk"> <label for="ghost-walk">Guidad spövandring (199 kr)</label>
+                        <input type="checkbox" id="ghost-walk" name="activity" value="199"> <label for="ghost-walk">Guidad spövandring (199 kr)</label>
                     </span>
                     <span>
-                        <input type="checkbox" id="call-ghosts" name="activity" value="call-ghosts"> <label for="call-ghosts">Kalla på spöken (249 kr)</label>
+                        <input type="checkbox" id="call-ghosts" name="activity" value="249"> <label for="call-ghosts">Kalla på spöken (249 kr)</label>
                     </span>
                 </fieldset>
 

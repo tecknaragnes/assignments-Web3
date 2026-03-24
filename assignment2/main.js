@@ -13,7 +13,7 @@ if (!localStorage.getItem("productData")) { //se om det finns sparad data i loca
 //----------Töm kundvagnen----------
 const emptyCart = () => {
     localStorage.setItem("productData", JSON.stringify(products));
-    renderShoppingcart(); //Tömmer, men sen när man klickar på ny produkt kommer alla in igen med sina förra antal
+    renderShoppingcart(); //Tömmer
     renderCards();
 }
 
