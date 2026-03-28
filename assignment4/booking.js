@@ -1,6 +1,8 @@
 const houseDiv = document.getElementById("houseInfoDiv");
 
 const dateInput = document.getElementById("start-date");
+const today = new Date();
+// console.log(today.toLocaleDateString()); //YYYY-MM-DD
 const nights = document.getElementById("number-nights");
 const dinner = document.getElementById("dinner");
 const breakfast = document.getElementById("breakfast");
@@ -30,8 +32,9 @@ export class Booking { // Bokningsformuläret skall hanteras av en JavaScript-kl
 
     // getters och setters
     set numberOfNights(v) {
-        if (v < 0) {
+        if (v < 1) {
             throw new Error("Du måste boka minst 1 natt.");
+            return;
         }
         this.#numberOfNights = v;
     }
@@ -39,6 +42,10 @@ export class Booking { // Bokningsformuläret skall hanteras av en JavaScript-kl
         return this.#numberOfNights;
     }
     set startDate(d) {
+        if (d < today.toLocaleDateString()) { // Datum ska ändast tillåta dagens datum eller senare
+            throw new Error("Du måste välja ett datum som är senare än idag.");
+            return;
+        }
         this.#startDate = d; //sträng
     }
     get startDate() {
@@ -51,7 +58,7 @@ export class Booking { // Bokningsformuläret skall hanteras av en JavaScript-kl
         return this.#addOns;
     }
     set campaignCode(c) {
-        this.#campaignCode = c.toUpperCase(); //sträng
+        this.#campaignCode = c; //sträng
     }
     get campaignCode() {
         return this.#campaignCode;
@@ -85,37 +92,39 @@ export class Booking { // Bokningsformuläret skall hanteras av en JavaScript-kl
         priceSpan.textContent = this.#totalPrice; //visa pris dynamiskt i #final-price
     }
 
-    validate() {
-        // const validationMsg = document.createElement("div");
-        // validationMsg.textContent = //vad som är fel
-        // bookingDiv.append(validationMsg);
-        // try {
-        //     this.#numberOfNights;
-        // } catch (err) {
-        //     validationMsg.textContent = Error;
-        // }
-
-        this.generateConfirmation();
-        // om inte ok:
-        //kontrollerar om data är giltig (ex antal nätter>0, giltigt datum, etc. returnerar true om allt är ok, annars visa felmeddelande)
+    validate() { //behövs den här? Nu har jag ju valideringen inbyggd i 
+        if (this.#numberOfNights > 0
+            && this.#startDate > today.toLocaleDateString()) {
+            this.generateConfirmation();
+        } else {
+            this.showError();
+            // validationMsg.textContent = error.message; //vad som är fel
+        }
     }
 
-    generateConfirmation() { // När kunden klickar på “Boka” ska en bokningsbekräftelse visas.
+    generateConfirmation() { // När kunden klickar på “Boka” ska en bokningsbekräftelse visas, och ska innehålla en sammanfattning av bokningen: husets namn, incheckningsdatum, antal dagar, valda tillägg, totalpris, och en tackhälsning.
         houseDiv.innerHTML = "";
         houseDiv.classList.add("confirmation");
         houseDiv.innerHTML = `
         <h2>Bokning bekräftad!</h2>
         <p>Du har bokat ${this.#house.name} i ${this.#numberOfNights} nätter, med startdatum ${this.#startDate}.</p>
-        <p>Bokningen innehåller: ${this.#addOns}</p>
+        <p>Bokningen innehåller: <span id="addOnSpan"></span></p>
         <p>Totalpris: ${this.#totalPrice} kr</p>
         <p>Tack för din beställning! Spökena väntar spänt på din ankomst! 👻</p>
-        `;
-        // Skapar HTML för bekräftelsen (husnamn, datum, dagar, tillägg, totalpris, tackhälsning).
+        `; // Skapar HTML för bekräftelsen (husnamn, datum, dagar, tillägg, totalpris, tackhälsning).
+
+        const addOnSpan = document.getElementById("addOnSpan");
+        if (dinner.checked) {
+            addOnSpan.textContent += "middag";
+        }
+        if (breakfast.checked) {
+            addOnSpan.textContent += ", fukost";
+        }
+        if (ghostWalk.checked) {
+            addOnSpan.textContent += ", guidad spökvandring";
+        }
+        if (callGhosts.checked) {
+            addOnSpan.textContent += ", kalla på spöken";
+        }
     }
 }
-
-//-------------------------------------------------
-// Om det finns valideringsfel i formuläret (ex. ogiltigt datum, antal dagar mindre än 1) ska dessa fångas upp och visas tydligt i gränssnittet, utan att bokningen “genomförs”.
-// Bekräftelsen ska innehålla en sammanfattning av bokningen: husets namn, incheckningsdatum, antal dagar, valda tillägg, totalpris, och en tackhälsning.
-// Klassen skall ha metoder för att validera datan. Om det finns valideringsfel ska dessa visas i gränssnittet
-// Datum ska ändast tillåta dagens datum eller senare
