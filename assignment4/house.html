@@ -36,7 +36,7 @@
             <form id="booking-form">
                 <fieldset>
                     <label for="start-date">Startdatum:</label>
-                    <input type="date" min="2026-03-29" id="start-date" required>
+                    <input type="date" id="start-date" required>
                     <!-- incheckningsdatum (datum, obligatoriskt, inte tidigare än dagens datum) -->
                     <label for="number-nights">Antal nätter:</label>
                     <input type="number" min="1" id="number-nights" value="1" required>
@@ -73,6 +73,8 @@
                     <button id="submit-booking">Boka</button>
                 </fieldset>
             </form>
+
+            <div id="error-msg"></div>
         </div>
     </main>
 
